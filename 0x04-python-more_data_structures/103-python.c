@@ -45,8 +45,8 @@ void print_python_bytes(PyObject *p)
  * print_python_list - Prints list information
  *
  * @p: Python Object
- * Return: no return 
- *`/
+ * Return: no return
+ */
 void print_python_list(PyObject *p)
 {
 	long int size, i;
@@ -67,3 +67,4 @@ void print_python_list(PyObject *p)
 		if (PyBytes_Check(obj))
 			print_python_bytes(obj);
 	}
+}
